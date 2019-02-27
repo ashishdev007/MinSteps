@@ -15,26 +15,30 @@ public class MinSteps {
 
     private void dymanicSolution(){
 
-        steps[0] = 0;
-        moves[0] = 1;
+        steps[1] = 0;
+        moves[1] = 1;
 
-        for (int i = 1; i < tokens; i++) {
+        for (int i = 2; i <= tokens; i++) {
 
             int min = steps[i-1];
             int minIndex = i-1;
 
-            if ((i+1)%2 == 0){
-                if (steps[((i+1)/2) - 1] < min){
-                    min = steps[((i+1)/2) - 1];
-                    minIndex = ((i+1)/2) - 1;
+            if ((i % 2) == 0){
+
+                if (steps[ i / 2] < min){
+                    min = steps[i / 2];
+                    minIndex = i / 2;
                 }
+
             }
 
-            if (((i+1)%3) ==0){
-                if (steps[((i+1)/3) - 1] < min){
-                    min = steps[((i+1)/3) - 1];
-                    minIndex = ((i+1)/3) - 1;
+            if ((i % 3) == 0){
+
+                if (steps[i / 3] < min){
+                    min = steps[i / 3];
+                    minIndex = i / 3;
                 }
+
             }
 
             steps[i] = 1 + min;
