@@ -7,8 +7,8 @@ public class MinSteps {
 
     public MinSteps(int tokens){
         this.tokens = tokens;
-        this.steps = new int[tokens +1];
-        this.moves = new int[tokens];
+        this.steps = new int[tokens + 1];
+        this.moves = new int[tokens + 1];
 
         dymanicSolution();
     }
@@ -50,31 +50,31 @@ public class MinSteps {
 
     public int dpSolution(){
 
-        return steps[tokens - 1];
+        return steps[tokens];
     }
 
     public int recSolution(){
-        return recSolution(tokens - 1);
+        return recSolution(tokens);
     }
 
     public int recSolution(int tok){
 
-        if (tok == 0){
+        if (tok == 1){
             return 0;
         }
-        else if (tok == tokens){
+        else if (tok == tokens + 1){
             return Integer.MAX_VALUE;
         }
 
-        int by2 = tokens;
-        int by3 = tokens;
+        int by2 = tokens + 1;
+        int by3 = tokens + 1;
 
-        if ((tok + 1) % 2 == 0){
-            by2 = ((tok+1)/2) - 1;
+        if (tok % 2 == 0){
+            by2 = tok / 2;
         }
 
-        if ((tok + 1) % 3 == 0){
-            by2 = ((tok+1)/3) - 1;
+        if (tok % 3 == 0){
+            by2 = tok / 3;
         }
 
         return (1 + Math.min(recSolution(tok - 1), Math.min(recSolution(by2), recSolution(by3))));
