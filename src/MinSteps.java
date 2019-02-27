@@ -90,12 +90,12 @@ public class MinSteps {
             display.append(" --> ");
         }
 
-        int i = tokens - 1;
+        int i = tokens;
 
-        while (i > 0){
-            display.append((moves[i] + 1));
+        while (i > 1){
+            display.append(moves[i]);
 
-            if ((moves[i] + 1) != 1){
+            if (moves[i] != 1){
                 display.append(" --> ");
             }
 
