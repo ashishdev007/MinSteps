@@ -29,7 +29,8 @@ public class MinSteps {
     }
 
     /**
-     * Method that uses dynamic programming to assign the number of steps associated with the number of tokens
+     * Method that uses dynamic programming to assign the number of steps associated with the number of tokens. The no of steps calculated are
+     * stored in "steps". Also stores the next steps associated with each no of token in "moves".
      */
     private void dymanicSolution(){
 
@@ -74,7 +75,7 @@ public class MinSteps {
     }
 
     /**
-     * Method to return the total number of steps required in the game.
+     * Method to return the total number of steps required in the game by accessing "steps". (The actual calculation happens in "dymanicSolution" method)
      * @return The total number of steps
      */
     public int dpSolution(){
@@ -119,7 +120,7 @@ public class MinSteps {
     }
 
     /**
-     * Calls the overriding recSolution method to calculate the total number of steps in the game
+     * Calls the overloading recSolution method to calculate the total number of steps in the game
      * @return The total no of steps
      */
     public int recSolution(){
@@ -127,7 +128,7 @@ public class MinSteps {
     }
 
     /**
-     * Method to show the exact steps of the game
+     * Method to show the exact steps of the game by using the values stored in "moves"
      * @return The trace of the steps
      */
     public String getMoves(){
