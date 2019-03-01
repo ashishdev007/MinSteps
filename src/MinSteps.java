@@ -1,4 +1,12 @@
 
+/**
+* Developer: Ashish Dev
+* CWID: 30100886
+* Description: The class helps to optimize The Game of Tokens. Given n tokens, we have to get to 1 token. We can remove one token,
+* n/2 tokens (if n%2 == 0) or n/3 tokens (if n%3 == 0). 
+* The program analyzes the total numbers of steps required to get from the
+* given number of tokens to one token and gives a trace of the best steps to take.
+*/
 public class MinSteps {
 
     /**
